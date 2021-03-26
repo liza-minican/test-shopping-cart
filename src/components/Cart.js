@@ -35,23 +35,20 @@ alert("Thank you and go to payment!")
 
   return (
     <>
-      <h1>Cart</h1>
-      {cart.length === 0 && <h3>Your card is empty</h3>}
-      {cart.length > 0 && (
-        <button onClick={() => removeAll()}>Clear cart</button>
-      )}
+      <h1 className="header-page-title position-center highlight">Cart</h1>
+      {cart.length === 0 && <h3 className="position-center">Your card is empty</h3>}
       <div className="product-list">
         {cart.map((product) => (
           <div className="product-card" key={product.id}>
-            <h3 className="product-title">{product.name}</h3>
-            <p className="product-description">{product.h2}</p>
+            <h3 className="highlight">{product.name}</h3>
+            <p>{product.h2}</p>
             <div className="flex-wrap-buy">
-              <h4 className="product-price">${product.price}</h4>
-              <button onClick={() => addToCart(product)}>+</button>
+              <h4>${product.price}</h4>
+              <button className="button-change-quantity" onClick={() => addToCart(product)}>+</button>
               <div className="product-quantity">{product.quantity}</div>
-              <button onClick={() => decreaseAmountInCart(product)}>-</button>
+              <button className="button-change-quantity"  onClick={() => decreaseAmountInCart(product)}>-</button>
               <button
-                className="remove-button"
+                className="primary-button"
                 onClick={() => removeFromCart(product)}
               >
                 Remove
@@ -60,16 +57,21 @@ alert("Thank you and go to payment!")
           </div>
         ))}
       </div>
-      <div>Total Cost: ${getSum()} </div>
-      <div className="ckeckout">
-      <button
-        className="checkout-button"
+      <div className="position-center">
+      <div className="margin-30 bold">Total Cost: ${getSum()} </div>
+      {cart.length > 0 && (
+        <div className="margin-30">
+           <button className="primary-button" onClick={() => removeAll()}>Empty cart</button>
+        </div>
+      )}
+      <div>
+      <button className="button-inside-cart"
         onClick={checkoutAlert}
       >
         Checkout
       </button>
+      </div> 
       </div>
-    
     </>
   );
 };

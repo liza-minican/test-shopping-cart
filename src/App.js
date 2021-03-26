@@ -43,8 +43,8 @@ export const App = () => {
       {page === PAGE_PRODUCTS && (
         <>
          <header className="header-buttons">
-          <button className="change-pages-button" onClick={() => goTo(PAGE_CART)}>
-           Go to Cart {getItemsSum()}
+          <button className="primary-button header-button" onClick={() => goTo(PAGE_CART)}>
+           Go to Cart ({getItemsSum()})
           </button>
          </header>
         <ProductList setCart={setCart} cart={cart} addToCart={addToCart} />
@@ -53,7 +53,7 @@ export const App = () => {
       {page === PAGE_CART && (
         <>
           <header className="header-buttons">
-          <button  className="change-pages-button" onClick={() => goTo(PAGE_PRODUCTS)}> View Products </button>
+          <button  className="primary-button header-button" onClick={() => goTo(PAGE_PRODUCTS)}> View Products </button>
         </header>
         <Cart cart={cart} setCart={setCart} addToCart={addToCart} />
         </>

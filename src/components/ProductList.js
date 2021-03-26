@@ -14,15 +14,15 @@ export const ProductList = ({ addToCart }) => {
 
   return (
     <>
-      <h1 className="header-products highlight">Products</h1>
+      <h1 className="position-center highlight">Products</h1>
       <div className="product-list">
         {products.map((product) => (
           <div className="product-card" key={product.id}>
             <h3 className="product-title highlight">{product.name}</h3>
-            <p className="product-description">{product.h2}</p>
+            <p>{product.h2}</p>
             <div className="flex-wrap-buy">
-              <p className="product-price">${product.price}</p>
-              <button className="buy-button" onClick={() => addToCart(product)}>
+              <p>${product.price}</p>
+              <button className="primary-button width-50" onClick={() => addToCart(product)}>
                 Add to card
               </button>
             </div>
