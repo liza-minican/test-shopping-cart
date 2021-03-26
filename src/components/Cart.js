@@ -1,20 +1,39 @@
 import React from 'react';
 
-export const Cart = ({cart, removeFromCart, removeAll}) => {
+export const Cart = ({cart,setCart}) => {
     
     const getSum = () => {
         //cart.map(item => item.price).reduce((prev, curr) => prev + curr,0)
-        return cart.reduce((sum, { price }) => sum + price, 0)
+        return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0)
         // cart.reduce((a, b) => a + b.price,
         // 0
     }
+    const removeFromCart = (productToRemove) => {
+      console.log("remove to cart")
+      setCart(cart.filter((product) => product !== productToRemove));
+    };
+    
+    const removeAll = () => {
+      console.log("remove all")
+      setCart([]);
+    };
+    
+const setQuantity = (product, amount) => {
+  const newCart = [...cart];
+  newCart.find(item => item === product.id).quantity = amount;
+  setCart(newCart); 
+}
+
     return (
         <>
         <h1>Cart</h1>
+        {cart.length === 0 && (
+          <h3>Your card is empty</h3>
+        )}
         {cart.length > 0 && (
           <button onClick = {() => removeAll()}>Clear cart</button>
           )
-}
+        }
         <div className = "product-list">
           {cart.map((product) => (
         <div className ="product-card" key={product.id} >
@@ -23,7 +42,9 @@ export const Cart = ({cart, removeFromCart, removeAll}) => {
            {product.h2}       
            </p>
            <div className = "flex-wrap-buy">
-           <p className = "product-price">${product.price}</p>
+           <h4 className = "product-price">${product.price}</h4>
+           <input value={product.quantity} onChange={(e) => setQuantity(product, parseInt(e.target.value))}></input>
+           {/* <h4 className = "product-price">{product.quantity}</h4> */}
            <button className = "remove-button" onClick = {() => removeFromCart(product)}> Remove</button>
         </div>
         </div>

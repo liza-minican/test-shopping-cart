@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 
- export const ProductList = ({addToCart}) => {
+ export const ProductList = ({cart, setCart}) => {
 
     const PRODUCTS_URL = "https://falconx-development.coffee4tech.net/products/public?country=GB"
     const [products, setProducts] = useState([]);
@@ -12,7 +12,20 @@ import React, { useEffect, useState} from 'react';
       }
        ,[])
        console.log(products);
-
+       const addToCart = (product) => {
+        let newCart = [...cart];  
+        let itemInCart = newCart.find((item) => product.name === item.name);
+      if  (itemInCart) {
+          itemInCart.quantity++;
+        } else {
+          itemInCart = {
+            ...product,
+            quantity: 1,
+          }
+          newCart.push(itemInCart);
+        }
+        setCart(newCart);
+      };
       
 return(
     <>
@@ -25,7 +38,7 @@ return(
        {product.h2}       
        </p>
        <div className = "flex-wrap-buy">
-       <p className = "product-price">{product.price}</p>
+       <p className = "product-price">${product.price}</p>
        <button className = "buy-button" onClick = {()=> addToCart(product)} >Add to card</button>
     </div>
     </div>
