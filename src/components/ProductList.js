@@ -20,7 +20,7 @@ export const ProductList = ({ addToCart }) => {
           <div className="product-card" key={product.id}>
             <h3 className="product-title highlight">{product.name}</h3>
             <p>{product.h2}</p>
-            <div className="flex-wrap-buy">
+            <div className="flex-wrap">
               <p>${product.price}</p>
               <button className="primary-button width-50" onClick={() => addToCart(product)}>
                 Add to card

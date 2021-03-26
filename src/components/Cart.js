@@ -42,7 +42,7 @@ alert("Thank you and go to payment!")
           <div className="product-card" key={product.id}>
             <h3 className="highlight">{product.name}</h3>
             <p>{product.h2}</p>
-            <div className="flex-wrap-buy">
+            <div className="flex-wrap align">
               <h4>${product.price}</h4>
               <button className="button-change-quantity" onClick={() => addToCart(product)}>+</button>
               <div className="product-quantity">{product.quantity}</div>

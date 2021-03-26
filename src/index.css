@@ -44,79 +44,84 @@ code {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.flex-wrap-buy {
+.flex-wrap {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: flex-end;
 }
 
 /**** specifications ****/
 
-.highlight{
+.highlight {
   color: #5a92e5;
 }
-.position-center{
+.position-center {
   text-align: center;
 }
 
-.margin-30{
+.margin-30 {
   margin-bottom: 30px;
 }
-.bold{
+.bold {
   font-weight: bold;
+}
+
+.align {
+  align-items: center !important;
 }
 /**** buttons ****/
 
-.primary-button{
+.primary-button {
   background-color: #5a92e5;
   color: white;
   border: none;
-  font-weight: bold; 
-  padding:15px;
+  font-weight: bold;
+  padding: 15px;
 }
-.primary-button:hover{
-  background-color:#f98b88;
-  cursor: pointer; 
+.primary-button:hover {
+  background-color: #f98b88;
+  cursor: pointer;
 }
-.primary-button:focus{
-  outline:none;
+.primary-button:focus {
+  outline: none;
   box-shadow: none;
-  }
+}
 
 .width-50 {
   width: 50%;
 }
 
-.header-buttons{
-    text-align: right;
-    margin: 30px 100px;
+.header-buttons {
+  text-align: right;
+  margin: 30px 100px;
 }
 
- @media only screen and (max-width: 720px) {
+@media only screen and (max-width: 720px) {
   .header-buttons {
     text-align: center;
   }
-} 
-.button-inside-cart{
-  background-color:#f98b88;
+}
+.button-inside-cart {
+  background-color: #f98b88;
   color: white;
   border: none;
   padding: 15px;
   font-weight: bold;
 }
 
-.button-inside-cart:hover{
-  background-color:#FFA399;
-  cursor: pointer; 
+.button-inside-cart:hover {
+  background-color: #ffa399;
+  cursor: pointer;
 }
 
-.button-inside-cart:focus{
-  outline:none;
+.button-inside-cart:focus {
+  outline: none;
   box-shadow: none;
-  }
+}
 
-.button-change-quantity{
-width:auto;
-height:25px;
-} 
+.button-change-quantity {
+  width: auto;
+  height: 25px;
+}
