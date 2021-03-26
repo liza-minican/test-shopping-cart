@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 
- export const ProductList = ({cart, setCart}) => {
+ export const ProductList = ({cart, setCart, addToCart}) => {
 
     const PRODUCTS_URL = "https://falconx-development.coffee4tech.net/products/public?country=GB"
     const [products, setProducts] = useState([]);
@@ -12,21 +12,7 @@ import React, { useEffect, useState} from 'react';
       }
        ,[])
        console.log(products);
-       const addToCart = (product) => {
-        let newCart = [...cart];  
-        let itemInCart = newCart.find((item) => product.name === item.name);
-      if  (itemInCart) {
-          itemInCart.quantity++;
-        } else {
-          itemInCart = {
-            ...product,
-            quantity: 1,
-          }
-          newCart.push(itemInCart);
-        }
-        setCart(newCart);
-      };
-      
+       
 return(
     <>
     <h1>Products</h1>
