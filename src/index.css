@@ -9,65 +9,75 @@ body {
 }
 
 code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace; */
-    font-family: Helvetica, sans-serif
+  font-family: Helvetica, sans-serif;
+}
+
+.header-buttons{
+  text-align: right;
+  margin: 30px 200px;
+}
+
+.header-products{
+  text-align: center;
 }
 
 .product-list {
-  display:flex;
-  flex-wrap: wrap; 
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 50px 0;
-} 
+}
 
-.product-list a{
+.product-list a {
   text-decoration: none;
   color: #686b77;
 }
 
-.product-card { 
-  display:flex;
-  flex-direction: column; 
-  width:300px;
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
   height: 200px;
   padding: 2px 16px;
-  margin: 20px; 
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 .product-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-/* 
-.product-wrapper {
-width:100%
-} */
-
-.product-title {
-color: #5a92e5;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
- .flex-wrap-buy{
-  display:flex;
+
+.highlight{
+  color: #5a92e5;
+}
+
+.flex-wrap-buy {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* align-self: flex-end; */
 }
-
-/* .product-price {
-  width:50%;
-} */
 
 .buy-button {
   background-color: #5a92e5;
-  color:white;
-  border:none;
-  width:50%;
+  color: white;
+  border: none;
+  width: 50%;
 }
+
+.change-pages-button {
+  background-color: #5a92e5;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+.change-pages-button:hover {
+  background-color:#f98b88 
+}
+
 .header {
   background-color: #5a92e5;
- height:50px; 
- padding-top:20px;
+  height: 50px;
+  padding-top: 20px;
 }
